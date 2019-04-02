@@ -1,3 +1,240 @@
+body {
+  margin: 0;
+  height: 100%;
+}
+
+/*header*/
+.header {
+  background-color: #007db8 ;
+  height: 80px;
+  width: 100%;
+  top: 0px;
+  margin: 0px;
+}
+
+
+.header nav {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: 100%;
+}
+
+.header div {
+  display: inline-block;
+  height: 100%;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  height: 80px;
+}
+
+.menu ul{
+  height: 100%;
+  margin:0;
+  padding:0;
+  display: flex;
+  align-items: center;
+}
+
+.menu li{
+  margin-inline-start: 30px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+#dell {
+  height:80px ;
+}
+
+
+/*1st page*/
+.firstPage {
+  position: relative;
+  width: 80%;
+  left: 10%;
+}
+
 h1 {
-  color: red;
+  font-size: 40pt;
+}
+
+
+.specChoosen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.specChoosen div{
+  display: inline-block;
+  width: 50%;
+}
+
+.spec {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.spec ul {
+  position: relative;
+  width: 180px;
+  height: 250px;
+  margin: 10px;
+  padding: 0;
+}
+
+.img {
+  position: relative;
+  background-color: white;
+  width: 160px;
+  height: 160px;
+  top: 10px;
+  left: 10px;
+  list-style: none
+}
+
+.spec img {
+  height:160px ;
+}
+
+.desc {
+  position: relative;
+  background-color: white;
+  width: 180px;
+  height: 60px;
+  margin-top: 20px;
+  font-size: 18pt;
+  text-align: center;
+  list-style: none
+}
+
+#laptop {
+  max-width:100%;
+  height:auto;
+  max-height:100%;
+  top: 5%;
+}
+
+/*2nd page*/
+.laptopImg2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.laptopImg2 img{
+  width: 50%;
+}
+
+/*
+.selections {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  background-color: #73AD21;
+}
+*/
+
+ul.displaySelect, ul.hddSelect {
+  padding: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 400px;
+  width: 25%;
+  background-color: red;
+}
+
+ul.processorSelect, ul.ramSelect {
+  padding: 0;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  height: 400px;
+  width: 25%;
+  margin-left: 75%;
+  background-color: red;
+}
+
+.secondPage p{
+  text-align: center;
+  color: black;
+  font-size: 20pt;
+}
+
+
+
+
+/*footer*/
+footer {
+  position: relative;
+  bottom: 0;
+  margin: 0;
+}
+
+.links {
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background-color: black ;
+}
+
+.selected_parts {
+  height: 60px;
+  width: 100%;
+  bottom: 60px;
+  background-color: grey ;
+}
+
+.selected_parts ul{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected_parts li{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+
+.links ul{
+  position: relative;
+  height: 60px;
+  width: 60%;
+  left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  bottom: 0;
+}
+
+.links li{
+  display: inline-block;
+  margin-inline-start: 5%;
+  margin-inline-end: 5%;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
 }
