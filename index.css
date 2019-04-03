@@ -1,6 +1,7 @@
 body {
   margin: 0;
   height: 100%;
+  overflow: scroll;
 }
 
 /*header*/
@@ -61,12 +62,12 @@ body {
   position: relative;
   width: 80%;
   left: 10%;
+  padding-bottom: 120px;
 }
 
 h1 {
   font-size: 40pt;
 }
-
 
 .specChoosen {
   display: flex;
@@ -95,6 +96,7 @@ h1 {
   height: 250px;
   margin: 10px;
   padding: 0;
+  box-shadow: 10px 10px 8px #888888;
 }
 
 .img {
@@ -130,43 +132,39 @@ h1 {
 }
 
 /*2nd page*/
+.secondPage, #checkout{
+  display: none;
+}
+
+
 .laptopImg2 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
+  width: 45%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .laptopImg2 img{
-  width: 50%;
+  width: 100%;
 }
 
-/*
-.selections {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 100%;
-  background-color: #73AD21;
-}
-*/
 
 ul.displaySelect, ul.hddSelect {
   padding: 0;
   margin-top: 100px;
   margin-bottom: 100px;
-  height: 400px;
+  height: 200px;
   width: 25%;
-  background-color: red;
 }
 
 ul.processorSelect, ul.ramSelect {
   padding: 0;
   margin-top: 100px;
-  margin-bottom: 100px;
-  height: 400px;
+  margin-bottom: 280px;
+  height: 200px;
   width: 25%;
   margin-left: 75%;
-  background-color: red;
 }
 
 .secondPage p{
@@ -176,13 +174,30 @@ ul.processorSelect, ul.ramSelect {
 }
 
 
+.selections ul {
+  font-size: 20pt;
+  }
+  
+.arrowimg{
+  width: 100%;
+}
+
+.selections img{
+    width: 100%;
+    height: 20%
+  }
+
+  input[type=radio]  {
+    font-style: italic;
+  } 
 
 
 /*footer*/
 footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   margin: 0;
+  width: 100%;
 }
 
 .links {
@@ -196,7 +211,7 @@ footer {
   height: 60px;
   width: 100%;
   bottom: 60px;
-  background-color: grey ;
+  background-color: #9da1a3 ;
 }
 
 .selected_parts ul{
@@ -208,12 +223,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .selected_parts li{
   display: inline-block;
   width: 20%;
   text-align: center;
+  font-size: 16pt;
+  color: #1e4d63;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .links ul{
