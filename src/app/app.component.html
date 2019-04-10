@@ -1,19 +1,83 @@
-<h1>{{ todoListTitle }}</h1>
+<header class="header">
+  <nav>
+    <div class="logo">
+      <img id="dell" (click)="showProducts()"
+        src="https://www.mysmartgroup.co.uk/wp-content/uploads/2017/12/1-2-dell-logo-3d-white-png.png" />
+    </div>
+    <div class="myCart">
+      <ul>
+        <li (click)="showCart()"><a>My Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<div *ngIf="todosTasks.length !== 0">
-  <ul>
-    <li *ngFor="let task of todosTasks" [class.completed]="todos[task]" (click)="onClickTask(task)">
-      {{ task }}
-    </li>
-  </ul>
+<content id="pdPage" *ngIf="showhideProduct == true">
+  <div class="title">
+    <h1>Dell Shopping Cart</h1>
+  </div>
+  <div id="productBox" *ngFor="let products of productList; let i = index" [style.background-color]="checkSelected(i)">
+    <div class="proImg" *ngIf="products.cartQty == 0">
+      <img class="Image" src="{{products.image}}">
+    </div>
+    <div class="proDetails" *ngIf="products.cartQty == 0">
+      <div [style.margin-bottom.px]="10">Item id: {{products.id}}</div>
+      <div [style.margin-bottom.px]="10">Price: {{products.price}}</div>
+      <div>Description:</div>
+      <div>{{products.description}}</div>
+      <div id="select">
+        <div id="selectBtn"><button (click)="selectItem(i)">Select</button></div>
+        <div><button (click)="quantityMinus(i)">-</button></div>
+        <div id="qty">{{products.quantity}}</div>
+        <div><button (click)="quantityPlus(i)">+</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="blank"></div>
+</content>
+
+<div id="cartPage" *ngIf="showhideCart == true">
+  <!-- *ngIf="showhideCart == true"> -->
+  <div class="title">
+    <h1>Cart Page</h1>
+  </div>
+  <div id="cartBox" *ngFor="let products of productList; let i = index">
+    <nav class="cartNav" *ngIf="showhideCart == true && products.cartQty>0">
+      <div id="cartnavImg"><img class="cartImg" src="{{products.image}}"></div>
+      <div id="cartnavDetail">
+        <div id="cartnavDetail1">
+          <div>Item id: {{products.id}}</div>
+          <div>Price: {{products.price}}</div>
+          <div>Quantity: {{products.cartQty}}</div>
+          <div>Subtotal: {{products.cartQty*products.price}}</div>
+        </div>
+        <div id="cartnavDetail2">
+          <div>Description:</div>
+          <div> {{products.description}}</div>
+        </div>
+      </div>
+      <div id="cartnavRemove">
+        <button (click)="removeItem(i)">Remove item</button>
+      </div>
+    </nav>
+  </div>
+  <div class="emptyCart" *ngIf="showhideCart == true && isCart==0">
+    <div>Your shopping cart is empty :(</div>
+  </div>
+  <div class="contShop" *ngIf="showhideCart == true && isCart==0">
+    <div>
+      <button (click)="showProducts()">Continue shopping</button>
+    </div>
+  </div>
+  <div class="blank"></div>
 </div>
 
-<div *ngIf="todosTasks.length === 0">
-  <h3>No tasks found</h3>
-</div>
-
-
-<div>{{ checkNumCompleted() }} tasks have been completed</div>
-
-<button (click)="onClearList()">Clear List</button>
-<button (click)="onAddTask()">Add Task</button>
+<footer class="footer">
+  <nav>
+    <div id="cart">
+      <div id="addCart"><button (click)="addCart()">Add To Cart</button></div>
+      <div id="clearCart"><button (click)="clearCart()">Clear My Cart</button></div>
+      <div id="totolPrice">Total Price: {{totalPrice}} </div>
+    </div>
+  </nav>
+</footer>
